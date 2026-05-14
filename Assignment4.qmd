@@ -76,20 +76,17 @@ species_ex_1 = c("alligator", "panda", "penguin", "alligator", "panda", "penguin
 D_ex_1 = simpsons_index(species_ex_1)
 print(D_ex_1)
 
-#Output: [1] 0.25
 
 # Example two: one species is more common than the others
 species_ex_2 = c("panda", "panda", "panda", "panda", "panda", "penguin", "alligator")
 D_ex_2 = simpsons_index(species_ex_2)
 print(D_ex_2)
 
-#Output: [1] 0.4761905
 
 # Example three: all individuals are the same 
 species_ex_3 = c("panda", "panda", "panda", "panda", "panda", "panda", "panda")
 D_ex_3 = simpsons_index(species_ex_3)
 print(D_ex_3)
 
-#Output: [1] 1
 
 ```
