@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Lauren Chetley">
 
-<title>Simpsons Biodiversity Index</title>
+<title>testingassignment4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,56 +58,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="Assignment4_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Assignment4_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="Assignment4_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="Assignment4_files/libs/quarto-html/popper.min.js"></script>
-<script src="Assignment4_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Assignment4_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Assignment4_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Assignment4_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Assignment4_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Assignment4_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Assignment4_files/libs/bootstrap/bootstrap-a1060c1fe88f38477acde3018a4586ff.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<style>
-body { background-color: #fdf6fb; }
-h1, h2, h3 { color: #c9789e; }
-</style>
+<script src="testassignment4_files/libs/clipboard/clipboard.min.js"></script>
+<script src="testassignment4_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="testassignment4_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="testassignment4_files/libs/quarto-html/popper.min.js"></script>
+<script src="testassignment4_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="testassignment4_files/libs/quarto-html/anchor.min.js"></script>
+<link href="testassignment4_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="testassignment4_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="testassignment4_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="testassignment4_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="testassignment4_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
 
-<body class="quarto-light">
+<body class="fullcontent quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of Contents</h2>
-   
-  <ul>
-  <li><a href="#define-the-contract" id="toc-define-the-contract" class="nav-link active" data-scroll-target="#define-the-contract"><span class="header-section-number">1</span> Define the Contract</a></li>
-  <li><a href="#implement-the-r-function" id="toc-implement-the-r-function" class="nav-link" data-scroll-target="#implement-the-r-function"><span class="header-section-number">2</span> Implement the R function</a></li>
-  <li><a href="#testing-the-function-with-sample-data" id="toc-testing-the-function-with-sample-data" class="nav-link" data-scroll-target="#testing-the-function-with-sample-data"><span class="header-section-number">3</span> Testing the Function with Sample Data</a></li>
-  </ul>
-</nav>
-</div>
+
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Simpsons Biodiversity Index</h1>
+<h1 class="title">testingassignment4</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Lauren Chetley </p>
-          </div>
-  </div>
     
   
     
@@ -119,93 +98,107 @@ h1, h2, h3 { color: #c9789e; }
 </header>
 
 
-<section id="define-the-contract" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="define-the-contract"><span class="header-section-number">1</span> Define the Contract</h2>
-<p>This function calculates Simpson’s Index from a list of species names.</p>
-<p>The formula that will be used is: D = sum(n * (n - 1)) / (N * (N-1))</p>
-<ul>
-<li><p>n is the number of individuals in one species</p></li>
-<li><p>N is the total number of individuals of all species</p></li>
-</ul>
-<p>Inputs and Outputs</p>
-<ul>
-<li><p><span class="citation" data-cites="param">@param</span> species: vector name of species</p></li>
-<li><p><span class="citation" data-cites="return">@return</span>: Simpson’s index D</p></li>
-</ul>
-</section>
-<section id="implement-the-r-function" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="implement-the-r-function"><span class="header-section-number">2</span> Implement the R function</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simpsons_index created the function with species as the input. We will define species names later. </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># N counts the total number of individuals.</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simpsons formula requires at least two individuals. Fewer than two individuals will result in an error message. </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>simpsons_index<span class="ot">=</span><span class="cf">function</span>(species){</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>N<span class="ot">=</span><span class="fu">length</span>(species)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(N<span class="sc">&lt;</span><span class="dv">2</span>){<span class="fu">stop</span>(<span class="st">"You need at least two individuals"</span>)}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Empty vector to store species names and counts. </span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># These empty vectors will be used for future looping. </span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>species_names<span class="ot">=</span><span class="fu">c</span>() <span class="co">#store unique species names</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>species_counts<span class="ot">=</span><span class="fu">c</span>() <span class="co">#store counts of each species </span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#This loop goes through each species one at a time. If the species has been seen before, then it adds 1 to the count.The loops add a new species to the list with count of 1, if it has not been seen before. </span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a> <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) {</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    current_species<span class="ot">=</span>species[i]</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    match_count<span class="ot">=</span><span class="dv">0</span> </span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">length</span>(species_names)<span class="sc">&gt;</span><span class="dv">0</span>) { </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(species_names)) {</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(current_species<span class="sc">==</span>species_names[j]) {</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>          species_counts[j]<span class="ot">=</span>species_counts[j] <span class="sc">+</span> <span class="dv">1</span> </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>          match_count<span class="ot">=</span>match_count <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (match_count<span class="sc">==</span><span class="dv">0</span>) {</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>      species_names<span class="ot">=</span><span class="fu">c</span>(species_names, current_species)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>      species_counts<span class="ot">=</span><span class="fu">c</span>(species_counts, <span class="dv">1</span>)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a> }</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#' Assignment 4</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#' Simpson's Index (D)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' This function calculates Simpson's Index from a list of species names.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#' Formula used: </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' D = sum(n * (n - 1)) / (N * (N-1))</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' where n is the number of individuals in one species, </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' and N is the total number of individuals of all species.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#' </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param species A vector of species names.</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#' @return Simpson's index D.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># function definition</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>simpsons_index <span class="ot">=</span> <span class="cf">function</span>(species) {</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Count the total number of individuals</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  N  <span class="ot">=</span> <span class="fu">length</span>(species) <span class="co"># length is a built-in function that counts the number of elements in a vector</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Simpson's Index needs at least 2 individuals</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (N <span class="sc">&lt;</span> <span class="dv">2</span>) {</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"You need at least two individuals!"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Store species names and counts</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  species_names <span class="ot">=</span> <span class="fu">c</span>() <span class="co"># empty vector to store unique species names</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  species_counts <span class="ot">=</span> <span class="fu">c</span>() <span class="co"># empty vector to store counts of each species</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Loop through all individuals</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) {</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">#Compute numerator of Simpson's formula: sum(n * (n - 1)).</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">#This loops through each species count, computing (n * (n - 1)) for that species, and then adds it to a running total. </span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  numerator<span class="ot">=</span><span class="dv">0</span> </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(species_counts)) {</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    n<span class="ot">=</span>species_counts[i]</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    numerator<span class="ot">=</span>numerator <span class="sc">+</span> n <span class="sc">*</span> (n <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    current_species <span class="ot">=</span> species[i] <span class="co"># get the species name of the current individual </span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Variable to count matches</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    match_count <span class="ot">=</span> <span class="dv">0</span> </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check if species already exists in our list of unique species </span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">length</span>(species_names) <span class="sc">&gt;</span> <span class="dv">0</span>) { </span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co">#Commpute Simpson's Index</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>result<span class="ot">=</span>numerator  <span class="sc">/</span> (N <span class="sc">*</span> (N <span class="sc">-</span> <span class="dv">1</span>))</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="testing-the-function-with-sample-data" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="testing-the-function-with-sample-data"><span class="header-section-number">3</span> Testing the Function with Sample Data</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example one: three species with the same number of individuals </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>species_ex_1 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"alligator"</span>, <span class="st">"panda"</span>, <span class="st">"penguin"</span>, <span class="st">"alligator"</span>, <span class="st">"panda"</span>, <span class="st">"penguin"</span>, <span class="st">"alligator"</span>, <span class="st">"panda"</span>, <span class="st">"penguin"</span> )</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>D_ex_1 <span class="ot">=</span> <span class="fu">simpsons_index</span>(species_ex_1)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(D_ex_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(species_names)) { <span class="co"># Then we loop through the list of unique species names to see if we have a match</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(current_species <span class="sc">==</span> species_names[j]) {</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>          species_counts[j] <span class="ot">=</span> species_counts[j] <span class="sc">+</span> <span class="dv">1</span> </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>          match_count <span class="ot">=</span> match_count <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If species was not found, add it to the list of unique species and set count to 1 </span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (match_count <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      species_names <span class="ot">=</span> <span class="fu">c</span>(species_names, current_species) <span class="co"># add the new species name to the list of unique species names</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      species_counts <span class="ot">=</span> <span class="fu">c</span>(species_counts, <span class="dv">1</span>) <span class="co"># add a count of 1 for the new species to the list of counts </span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Compute numerator of formula</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  numerator <span class="ot">=</span> <span class="dv">0</span> </span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(species_counts)) { <span class="co"># Loop through the list of counts for each species to compute the numerator of the formula </span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    n <span class="ot">=</span> species_counts[i] <span class="co"># get the count for the current species </span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    numerator <span class="ot">=</span> numerator <span class="sc">+</span> n <span class="sc">*</span> (n <span class="sc">-</span> <span class="dv">1</span>) <span class="co"># add n * (n - 1) to the numerator for the current species </span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Commpute Simpson's Index</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">=</span> numerator  <span class="sc">/</span> (N <span class="sc">*</span> (N <span class="sc">-</span> <span class="dv">1</span>))</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Test examples </span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------------</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Example one: three species with the same number of individuals </span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>species_ex_1 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"alligator"</span>, <span class="st">"panda"</span>, <span class="st">"penguin"</span>, <span class="st">"alligator"</span>, <span class="st">"panda"</span>, <span class="st">"penguin"</span>, <span class="st">"alligator"</span>, <span class="st">"panda"</span>, <span class="st">"penguin"</span> )</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>D_ex_1 <span class="ot">=</span> <span class="fu">simpsons_index</span>(species_ex_1)</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>D_ex_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.25</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example two: one species is more common than the others</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>species_ex_2 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"penguin"</span>, <span class="st">"alligator"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>D_ex_2 <span class="ot">=</span> <span class="fu">simpsons_index</span>(species_ex_2)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(D_ex_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example two: one species is more common than the others</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>species_ex_2 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"penguin"</span>, <span class="st">"alligator"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>D_ex_2 <span class="ot">=</span> <span class="fu">simpsons_index</span>(species_ex_2)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(D_ex_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4761905</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example three: all individuals are the same </span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>species_ex_3 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>D_ex_3 <span class="ot">=</span> <span class="fu">simpsons_index</span>(species_ex_3)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(D_ex_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example three: all individuals are the same </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>species_ex_3 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>, <span class="st">"panda"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>D_ex_3 <span class="ot">=</span> <span class="fu">simpsons_index</span>(species_ex_3)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(D_ex_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
 </div>
-</section>
 
 </main>
 <!-- /main column -->

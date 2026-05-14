@@ -1,8 +1,19 @@
 ---
-title: "Assignment 4"
+title: "Simpsons Biodiversity Index"
 author: "Lauren Chetley"
-format: html
-editor: visual
+format:
+  html:
+    theme: litera
+    toc: true
+    toc-title: "Table of Contents"
+    number-sections: true
+    highlight-style: arrow
+    include-in-header:
+      text: |
+        <style>
+        body { background-color: #fdf6fb; }
+        h1, h2, h3 { color: #c9789e; }
+        </style>
 ---
 
 ## Define the Contract
@@ -21,7 +32,7 @@ Inputs and Outputs
 
 -   @return: Simpson's index D
 
-    ## Implement the R function
+## Implement the R function
 
 ```{r}
 # Simpsons_index created the function with species as the input. We will define species names later. 

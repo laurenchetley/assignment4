@@ -88,7 +88,7 @@ simpsons_index = function(species) {
 # Example one: three species with the same number of individuals 
 species_ex_1 = c("alligator", "panda", "penguin", "alligator", "panda", "penguin", "alligator", "panda", "penguin" )
 D_ex_1 = simpsons_index(species_ex_1)
-print(D_ex_1)
+D_ex_1
 
 # Example two: one species is more common than the others
 species_ex_2 = c("panda", "panda", "panda", "panda", "panda", "penguin", "alligator")
