@@ -5,23 +5,91 @@ format: html
 editor: visual
 ---
 
-## Quarto
+## Define the Contract
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+This function calculates Simpson's Index from a list of species names.
 
-## Running Code
+The formula that will be used is: D = sum(n \* (n - 1)) / (N \* (N-1))
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+-   n is the number of individuals in one species
+
+-   N is the total number of individuals of all species
+
+Inputs and Outputs
+
+-   @param species: vector name of species
+
+-   @return: Simpson's index D
+
+    ## Implement the R function
 
 ```{r}
-1 + 1
+# Simpsons_index created the function with species as the input. We will define species names later. 
+# N counts the total number of individuals.
+# Simpsons formula requires at least two individuals. Fewer than two individuals will result in an error message. 
+simpsons_index=function(species){
+N=length(species)
+  if(N<2){stop("You need at least two individuals")}
+
+# Empty vector to store species names and counts. 
+# These empty vectors will be used for future looping. 
+species_names=c() #store unique species names
+species_counts=c() #store counts of each species 
+
+#This loop goes through each species one at a time. If the species has been seen before, then it adds 1 to the count.The loops add a new species to the list with count of 1, if it has not been seen before. 
+ for(i in 1:N) {
+    current_species=species[i]
+    match_count=0 
+    if (length(species_names)>0) { 
+      for (j in 1:length(species_names)) {
+        if(current_species==species_names[j]) {
+          species_counts[j]=species_counts[j] + 1 
+          match_count=match_count + 1
+        }
+      }
+    }
+    if (match_count==0) {
+      species_names=c(species_names, current_species)
+      species_counts=c(species_counts, 1)
+    }
+ }
+
+#Compute numerator of Simpson's formula: sum(n * (n - 1)).
+#This loops through each species count, computing (n * (n - 1)) for that species, and then adds it to a running total. 
+  numerator=0 
+  for(i in 1:length(species_counts)) {
+    n=species_counts[i]
+    numerator=numerator + n * (n - 1)
+  }
+
+#Commpute Simpson's Index
+result=numerator  / (N * (N - 1))
+  return(result)
+}
 ```
 
-You can add options to executable code like this
+## Testing the Function with Sample Data
 
 ```{r}
-#| echo: false
-2 * 2
-```
+# Example one: three species with the same number of individuals 
+species_ex_1 = c("alligator", "panda", "penguin", "alligator", "panda", "penguin", "alligator", "panda", "penguin" )
+D_ex_1 = simpsons_index(species_ex_1)
+print(D_ex_1)
 
-The `echo: false` option disables the printing of code (only output is displayed).
+#Output: [1] 0.25
+
+# Example two: one species is more common than the others
+species_ex_2 = c("panda", "panda", "panda", "panda", "panda", "penguin", "alligator")
+D_ex_2 = simpsons_index(species_ex_2)
+print(D_ex_2)
+
+#Output: [1] 0.4761905
+
+# Example three: all individuals are the same 
+species_ex_3 = c("panda", "panda", "panda", "panda", "panda", "panda", "panda")
+D_ex_3 = simpsons_index(species_ex_3)
+print(D_ex_3)
+
+#Output: [1] 1
+
+```
